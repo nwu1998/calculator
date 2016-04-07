@@ -27,6 +27,14 @@ class ViewController: UIViewController
         }
     }
     
+    @IBAction func backspace(sender: UIButton) {
+        if display.text!.characters.count > 1 {
+            display.text = display.text!.substringToIndex(display.text!.endIndex.predecessor())
+        } else {
+            display.text = "0"
+        }
+    }
+    
     @IBAction func changeSign(sender: UIButton) {
         if userInTheMiddleOfTypingAVariable {
             if display.text?.rangeOfString("-") == nil {
